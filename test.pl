@@ -2,4 +2,4 @@
 use ExtUtils::testlib;
 use Pjsua;
 
-Pjsua::hello();
+Pjsua::start();
