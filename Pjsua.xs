@@ -45,17 +45,17 @@ int init(){
 }
 
 int add_account(char *host, char *user, char *pass){
-  char *sip_url;
-  sprintf(&sip_url, "sip:%s@%s", user, host);
+  char sip_url[128];
+  sprintf(sip_url, "sip:%s@%s", user, host);
   if(pjsua_verify_sip_url(&sip_url) != PJ_SUCCESS) return -1;
 
-  char *sip_uri;
-  sprintf(&sip_uri, "sip:%s", host);
+  char sip_uri[128];
+  sprintf(sip_uri, "sip:%s", host);
 
-  pj_str_t pj_id = pj_str(&sip_url);
-  pj_str_t pj_reg_uri = pj_str(&sip_uri);
-  pj_str_t pj_user = pj_str(&user);
-  pj_str_t pj_pass = pj_str(&pass);
+  pj_str_t pj_id = pj_str(sip_url);
+  pj_str_t pj_reg_uri = pj_str(sip_uri);
+  pj_str_t pj_user = pj_str(user);
+  pj_str_t pj_pass = pj_str(pass);
 
   int acc_id;
   pj_status_t rc;
