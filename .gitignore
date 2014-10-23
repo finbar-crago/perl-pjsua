@@ -1,0 +1,9 @@
+MYMETA.json
+MYMETA.yml
+Makefile
+Makefile.old
+Pjsua.bs
+Pjsua.c
+Pjsua.o
+blib/
+pm_to_blib
